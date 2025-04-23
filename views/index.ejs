@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Home</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>All Posts</h1>
+            <a href="/blogs/new" class="btn-create-post">Create New Post</a>
+        </header>
+
+        <section class="posts">
+            <% posts.forEach(post => { %>
+                <article class="post">
+                    <h2><%= post.title %></h2>
+                    <p><%= post.content %></p>
+                    <p class="post-meta">
+                        Category: <%= post.category || 'Uncategorized' %> |
+                        Posted on: <%= post.created_at %>
+                    </p>
+                </article>
+            <% }) %>
+        </section>
+    </div>
+
+<!-- Password Input Form -->
+<div id="authForm">
+    <label for="password">Enter Password to View Blogs:</label>
+    <input type="password" id="password" name="password" placeholder="Password" />
+    <button onclick="checkPassword()">Submit</button>
+</div>
+
+<script>
+    function checkPassword() {
+        var password = document.getElementById('password').value;
+        
+        if (password === "123") {
+            // Redirect to the blogs page if password is correct
+            window.location.href = "/blogs";
+        } else {
+            alert("Incorrect password. Try again.");
+        }
+    }
+</script>
+</body>
+</html>

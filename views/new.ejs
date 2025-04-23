@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create New Post</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Create a New Post</h1>
+    </header>
+
+    <form action="/blogs" method="POST" class="post-form">
+      <label for="title">Title:</label><br>
+      <input type="text" id="title" name="title" required><br>
+
+      <label for="content">Content:</label><br>
+      <textarea id="content" name="content" required></textarea><br>
+
+      <label for="category">Category:</label><br>
+      <select id="category" name="category" required>
+        <option value="">--Choose a category--</option>
+        <option value="Lifestyle">Lifestyle</option>
+        <option value="Tech">Tech</option>
+        <option value="Travel">Travel</option>
+        <option value="Food">Food</option>
+        <option value="Other">Other</option>
+      </select><br>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-submit">Submit</button>
+        <a href="/blogs" class="btn-cancel">Cancel</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
